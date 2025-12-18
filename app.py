@@ -277,6 +277,15 @@ def get_balanced_recommendations(query: str, max_results: int = 10) -> list:
     """Get balanced recommendations using LLM-enhanced analysis"""
     global store
     
+    # Ensure vector store is available (lazy init for WSGI servers)
+    if store is None:
+        try:
+            print("  Vector store is not initialized; attempting to initialize...")
+            initialize()
+        except Exception as e:
+            print(f"  Initialization attempt failed: {e}")
+            raise RuntimeError("Server not ready: vector store unavailable. Check server logs or restart the application.")
+    
     # Handle URL input
     if is_url(query.strip()):
         print("  Detected URL input, extracting content...")
@@ -462,6 +471,23 @@ def get_balanced_recommendations(query: str, max_results: int = 10) -> list:
         })
     
     return formatted
+
+
+# =============================================================================
+# Startup hook
+# =============================================================================
+
+@app.before_first_request
+def startup():
+    """Ensure initialization when running under WSGI (gunicorn, uWSGI, etc.)"""
+    global store, groq_client
+    if store is None:
+        try:
+            print("Startup: initializing system...")
+            initialize()
+        except Exception as e:
+            # Initialization may fail in some environments; keep server up but provide clear logs
+            print(f"Startup initialization failed: {e}")
 
 
 # =============================================================================
