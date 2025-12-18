@@ -477,7 +477,6 @@ def get_balanced_recommendations(query: str, max_results: int = 10) -> list:
 # Startup hook
 # =============================================================================
 
-@app.before_first_request
 def startup():
     """Ensure initialization when running under WSGI (gunicorn, uWSGI, etc.)"""
     global store, groq_client
@@ -488,6 +487,24 @@ def startup():
         except Exception as e:
             # Initialization may fail in some environments; keep server up but provide clear logs
             print(f"Startup initialization failed: {e}")
+
+# Register startup hook in a way that avoids using decorators that may not exist
+# on all Flask/WSGI combinations (some runtime environments or Flask variants
+# may not provide the decorator as an attribute on the app instance).
+try:
+    if hasattr(app, 'before_serving'):
+        app.before_serving(startup)
+    elif hasattr(app, 'before_first_request'):
+        app.before_first_request(startup)
+    else:
+        # Last-resort fallback: attempt to initialize at import time (best-effort)
+        print("Startup fallback: running initialize() at import time...")
+        try:
+            initialize()
+        except Exception as e:
+            print(f"Startup fallback initialization failed: {e}")
+except Exception as e:
+    print(f"Failed to register startup hook: {e}")
 
 
 # =============================================================================
