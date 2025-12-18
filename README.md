@@ -28,7 +28,7 @@ An intelligent recommendation system that analyzes job descriptions using **LLM-
 | **Health Check** | [https://inderjeet-shl-recommender.hf.space/health](https://inderjeet-shl-recommender.hf.space/health) |
 
 
-![Web App - Home Page](images/home-page.png)
+![Web App - Home Page](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/home-page.png)
 *Screenshot: Web app home page (hosted on Hugging Face Spaces).* 
 
 ---
@@ -44,7 +44,7 @@ Recruiters and hiring managers struggle to find the right SHL assessments for th
 ---
 
 ## 🏗️ Architecture
-![System overview](images/system-overview.png)
+![System overview](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/system-overview.png)
 *Figure: System overview showing data flow from user input to recommendations.*
 
 ---
@@ -255,7 +255,7 @@ docker run -p 7860:7860 -e GROQ_API_KEY=your_key shl-recommender
 - Return top 10 assessments with metadata (name, URL, type, duration)
 📝 Example Queries
 
-![Query example](images/query-example.png)
+![Query example](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/query-example.png)
 *Illustration: sample query flow and expected match types.*
 
 | Query | Expected Result Types |
