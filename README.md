@@ -2,7 +2,7 @@
 title: SHL Assessment Recommender
 emoji: 🎯
 colorFrom: blue
-colorTo: teal
+colorTo: green
 sdk: docker
 app_port: 7860
 pinned: false
