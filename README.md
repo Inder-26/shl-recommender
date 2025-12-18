@@ -255,7 +255,7 @@ docker run -p 7860:7860 -e GROQ_API_KEY=your_key shl-recommender
 - Return top 10 assessments with metadata (name, URL, type, duration)
 📝 Example Queries
 
-![Query example](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/query-example.png)
+![Query example](<img width="1835" height="3381" alt="Image" src="https://github.com/user-attachments/assets/3dc60379-47ad-4eec-bebc-de4039498662" />)
 *Illustration: sample query flow and expected match types.*
 
 | Query | Expected Result Types |
