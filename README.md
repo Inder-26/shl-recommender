@@ -28,8 +28,8 @@ An intelligent recommendation system that analyzes job descriptions using **LLM-
 | **Health Check** | [https://inderjeet-shl-recommender.hf.space/health](https://inderjeet-shl-recommender.hf.space/health) |
 
 
-![Web App - Home Page](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/home-page.png)
-*Screenshot: Web app home page (hosted on Hugging Face Spaces).* 
+<img width="1835" height="1241" alt="Image" src="https://github.com/user-attachments/assets/c3aac578-0323-435e-b7d6-e31a2374988c" />
+Screenshot: Web app home page (hosted on Hugging Face Spaces).* 
 
 ---
 
@@ -44,8 +44,8 @@ Recruiters and hiring managers struggle to find the right SHL assessments for th
 ---
 
 ## 🏗️ Architecture
-![System overview](https://raw.githubusercontent.com/Inder-26/shl-recommender/main/images/system-overview.png)
-*Figure: System overview showing data flow from user input to recommendations.*
+<img width="1500" height="625" alt="Image" src="https://github.com/user-attachments/assets/d889e260-5e4d-408c-b0a9-034029b7596e" />
+Figure: System overview showing data flow from user input to recommendations.
 
 ---
 
@@ -183,7 +183,7 @@ shl-recommender/
     └── predictions_test_set.csv  # Test set predictions
 ```
 
-*Note: If you prefer to standardize naming, I can rename `src/scrapper.py` → `src/scraper.py` and update imports/README.*
+Note: If you prefer to standardize naming, I can rename `src/scrapper.py` → `src/scraper.py` and update imports/README.
 🚀 Local Development
 
 ### Prerequisites
@@ -255,8 +255,8 @@ docker run -p 7860:7860 -e GROQ_API_KEY=your_key shl-recommender
 - Return top 10 assessments with metadata (name, URL, type, duration)
 📝 Example Queries
 
-![Query example](<img width="1835" height="3381" alt="Image" src="https://github.com/user-attachments/assets/3dc60379-47ad-4eec-bebc-de4039498662" />)
-*Illustration: sample query flow and expected match types.*
+<img width="1835" height="3381" alt="Image" src="https://github.com/user-attachments/assets/3dc60379-47ad-4eec-bebc-de4039498662" />
+*Illustration: sample query flow and expected match types.
 
 | Query | Expected Result Types |
 |-------|----------------------|
