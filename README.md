@@ -305,5 +305,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Hugging Face** — for hosting the demo on Spaces
 - **SentenceTransformers** — for embeddings and model utilities
 - **ChromaDB** — for the vector database and search tooling
-
-*Thanks to all upstream projects and contributors who made this work possible.*
